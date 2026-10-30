@@ -9,12 +9,14 @@ buttons.forEach(button => {
 
         sections.forEach(section => {
             section.style.display = 'none'
-
-            const targetSection = document.getElementById(targetSectionId) //=>ازاي حطينهtaregetSectionId جوه getIdدا اختصار انت الي بتحدده بس يكون data-sectionبتاعت الزرار بتساوي id بتاع section
-            if (targetSection)
-                targetSection.style.display = 'block'
         })
-        buttons.forEach(btn=>{
+        const targetSection = document.getElementById(targetSectionId) //=>ازاي حطينهtaregetSectionId جوه getIdدا اختصار انت الي بتحدده بس يكون data-sectionبتاعت الزرار بتساوي id بتاع section
+        if (targetSection) {
+
+            targetSection.style.display = 'block'
+        }
+
+        buttons.forEach(btn => {
             btn.classList.remove('bg-blue-500/10', 'text-blue-400')
             btn.classList.add('text-slate-300')
         })
@@ -112,7 +114,7 @@ function updatePlanentUI(x) {
 
 
 
-    const { englishName, description, semimajorAxis, meanRadius, density, sideralOrbit, sideralRotation, moons, gravity,mass:{massValue}} = x
+    const { englishName, description, semimajorAxis, meanRadius, density, sideralOrbit, sideralRotation, moons, gravity, mass: { massValue } } = x
 
 
     planetDetaiName.textContent = englishName;
